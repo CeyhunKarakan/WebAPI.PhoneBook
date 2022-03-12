@@ -46,25 +46,32 @@
                 <th>Name</th>
                 <th>Surname</th>
                 <th>Company</th>
-                <th>Operations</th>
+                <th>Update</th>
+                <th>Remove</th>
+                <th>Add User Info</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var user in Model)
             {
-                <tr>
-                    <td>@user.Name</td>
-                    <td>@user.Surname</td>
-                    <td>@user.Company</td>
-                    <td>
-                        <a asp-action="Update" asp-controller="Home" asp-route-id="@user.UUID">Update</a>
-                        <a asp-action="Remove" asp-controller="Home" asp-route-id="@user.UUID">Remove</a>
-                        <a asp-action="AddUserInfo" asp-controller="Home" asp-route-id="@user.UUID">AddUserInfo</a>
-                    </td>
-                </tr>
+            <tr>
+                <td>@user.Name</td>
+                <td>@user.Surname</td>
+                <td>@user.Company</td>
+                <td>
+                    <a asp-action="Update" asp-controller="Home" asp-route-id="@user.UUID">Update</a>
+                   
+                </td>
+                <td>
+                    <a asp-action="Remove" asp-controller="Home" asp-route-id="@user.UUID">Remove</a>
+                </td>
+                <td>
+                    <a asp-action="AddUserInfo" asp-controller="Home" asp-route-id="@user.UUID">AddUserInfo</a>
+                </td>
+            </tr>
             }
         </tbody>
     </table>
-    <a asp-action="Create" asp-controller="Home">Add New Item</a>
+    <a asp-action="Create" asp-controller="Home">Add New User</a>
 </body>
 </html>

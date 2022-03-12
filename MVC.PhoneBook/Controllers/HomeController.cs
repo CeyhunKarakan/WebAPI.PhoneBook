@@ -18,7 +18,7 @@ namespace MVC.PhoneBook.Controllers
         {
            _httpClientFactory = httpClientFactory;
         }
-
+        
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
@@ -27,7 +27,6 @@ namespace MVC.PhoneBook.Controllers
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var result = JsonConvert.DeserializeObject<List<UserResponseModel>>(jsonData);
-                ViewBag.responseMessage = "Success";
                 return View(result);
             }
             else 
