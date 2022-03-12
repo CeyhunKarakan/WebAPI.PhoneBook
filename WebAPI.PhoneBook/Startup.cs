@@ -42,7 +42,9 @@ namespace WebAPI.PhoneBook
                     opt.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
                 });
             });
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(opt => {
+                opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPI.PhoneBook", Version = "v1" });
