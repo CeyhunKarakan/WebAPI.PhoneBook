@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MVC.PhoneBook.ResponseModels;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,13 +25,15 @@ namespace MVC.PhoneBook.Controllers
             if (responseMessage.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var result = JsonConvert.DeserializeObject<List<UserResponseModel>>(jsonData);
                 ViewBag.responseMessage = "Success";
+                return View(result);
             }
             else 
-            { 
-                ViewBag.responseMessage = "Fail"; 
+            {
+                return View(null);
             }
-            return View();
+           
         }
     }
 }
