@@ -1,0 +1,35 @@
+﻿@model MVC.PhoneBook.ResponseModels.UserResponseModel
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Add New User</title>
+</head>
+<body>
+    @{
+        if (TempData["errorMessage"] != null)
+        {
+            <p style="color:red">
+                @TempData["errorMessage"]?.ToString()
+            </p>
+        }
+    }
+    <form asp-action="Create" asp-controller="Home" method="post">
+        <label>Name:</label>
+        <input type="text" asp-for="@Model.Name" />
+        <br />
+        <hr />
+        <label>Surname:</label>
+        <input type="text" asp-for="@Model.Surname" />
+        <br />
+        <hr />
+        <label>Company:</label>
+        <input type="text" asp-for="@Model.Company" />
+        <br />
+        <hr />
+        <div>
+            <a asp-action="Index" asp-controller="Home">Back</a>
+            <button type="submit">Save</button>
+        </div>
+    </form>
+
+</body>
+</html>

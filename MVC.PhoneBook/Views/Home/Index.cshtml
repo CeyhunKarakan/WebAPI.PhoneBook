@@ -4,6 +4,7 @@
 <head>
 </head>
 <body>
+
     <style>
         .styled-table {
             border-collapse: collapse;
@@ -38,6 +39,7 @@
                 }
     </style>
 
+
     <table class="styled-table">
         <thead>
             <tr>
@@ -55,10 +57,12 @@
                     <td>@user.Surname</td>
                     <td>@user.Company</td>
                     <td>
+                        <a asp-action="Update" asp-controller="Home" asp-route-id="@user.UUID">Update</a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
+    <a asp-action="Create" asp-controller="Home">Add New Item</a>
 </body>
 </html>
