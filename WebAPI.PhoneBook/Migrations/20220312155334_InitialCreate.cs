@@ -14,15 +14,22 @@ namespace WebAPI.PhoneBook.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Surname = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Company = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Mail = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Location = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Company = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Users", x => x.UUID);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "UUID", "Company", "Name", "Surname" },
+                values: new object[] { 1, "Amazon", "John", "Doe" });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "UUID", "Company", "Name", "Surname" },
+                values: new object[] { 2, "Amazon", "Ricky", "More" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -9,8 +9,8 @@ using WebAPI.PhoneBook.Data;
 namespace WebAPI.PhoneBook.Migrations
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20220312064327_SeedUserData")]
-    partial class SeedUserData
+    [Migration("20220312155334_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,16 +30,7 @@ namespace WebAPI.PhoneBook.Migrations
                     b.Property<string>("Company")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Location")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Mail")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Surname")
@@ -54,20 +45,14 @@ namespace WebAPI.PhoneBook.Migrations
                         {
                             UUID = 1,
                             Company = "Amazon",
-                            Location = "USA",
-                            Mail = "joh.doe@amazon.com",
                             Name = "John",
-                            Phone = "111444",
                             Surname = "Doe"
                         },
                         new
                         {
                             UUID = 2,
                             Company = "Amazon",
-                            Location = "USA",
-                            Mail = "ricky.more@amazon.com",
                             Name = "Ricky",
-                            Phone = "777888",
                             Surname = "More"
                         });
                 });
