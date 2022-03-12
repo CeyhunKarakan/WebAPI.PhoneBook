@@ -36,7 +36,12 @@ namespace WebAPI.PhoneBook
             );
 
             services.AddScoped<IUserRepository, UserRepository>();
-
+            services.AddCors(cors => {
+                cors.AddPolicy("WebAPI.PhoneBookPolicy", opt =>
+                {
+                    opt.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                });
+            });
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -55,7 +60,7 @@ namespace WebAPI.PhoneBook
             }
 
             app.UseRouting();
-
+            app.UseCors("WebAPI.PhoneBookPolicy");
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
