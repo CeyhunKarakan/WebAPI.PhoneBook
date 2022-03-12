@@ -13,8 +13,5 @@ namespace WebAPI.PhoneBook.Data
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Company { get; set; }
-        public string Phone { get; set; }
-        public string Mail { get; set; }
-        public string Location { get; set; }
     }
 }

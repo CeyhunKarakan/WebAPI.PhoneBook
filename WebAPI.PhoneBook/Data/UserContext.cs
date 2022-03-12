@@ -15,8 +15,8 @@ namespace WebAPI.PhoneBook.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().HasData(new User[]{
-            new() {UUID=1, Name="John", Surname="Doe", Company="Amazon", Phone="111444", Mail="joh.doe@amazon.com",Location="USA"},
-            new() {UUID=2, Name="Ricky", Surname="More", Company="Amazon", Phone="777888", Mail="ricky.more@amazon.com",Location="USA"}
+            new() {UUID=1, Name="John", Surname="Doe", Company="Amazon"},
+            new() {UUID=2, Name="Ricky", Surname="More", Company="Amazon"}
             });
             base.OnModelCreating(modelBuilder);
         }
