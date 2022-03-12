@@ -35,7 +35,14 @@ namespace WebAPI.PhoneBook
             }
             );
 
+            services.AddDbContext<UserInformationContext>(opt =>
+            {
+                opt.UseSqlServer(Configuration.GetConnectionString("Local"));
+            }
+            );
+
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserInformationRepository, UserInformationRepository>();
             services.AddCors(cors => {
                 cors.AddPolicy("WebAPI.PhoneBookPolicy", opt =>
                 {
