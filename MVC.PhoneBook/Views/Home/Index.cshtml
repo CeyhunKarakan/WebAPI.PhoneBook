@@ -48,7 +48,6 @@
                 <th>Company</th>
                 <th>Update</th>
                 <th>Remove</th>
-                <th>Add User Info</th>
             </tr>
         </thead>
         <tbody>
@@ -60,13 +59,9 @@
                 <td>@user.Company</td>
                 <td>
                     <a asp-action="Update" asp-controller="Home" asp-route-id="@user.UUID">Update</a>
-                   
                 </td>
                 <td>
                     <a asp-action="Remove" asp-controller="Home" asp-route-id="@user.UUID">Remove</a>
-                </td>
-                <td>
-                    <a asp-action="AddUserInfo" asp-controller="Home" asp-route-id="@user.UUID">AddUserInfo</a>
                 </td>
             </tr>
             }

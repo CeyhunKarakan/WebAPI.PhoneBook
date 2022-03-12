@@ -18,7 +18,6 @@ namespace MVC.PhoneBook.Controllers
         {
            _httpClientFactory = httpClientFactory;
         }
-        
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
@@ -38,6 +37,7 @@ namespace MVC.PhoneBook.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> Create(UserResponseModel model)
         {
@@ -86,6 +86,7 @@ namespace MVC.PhoneBook.Controllers
                 return View(model);
             }
         }
+
         public async Task<IActionResult> Remove(int id)
         {
             var client = _httpClientFactory.CreateClient();
