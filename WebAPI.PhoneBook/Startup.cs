@@ -12,6 +12,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebAPI.PhoneBook.Data;
+using WebAPI.PhoneBook.Interfaces;
+using WebAPI.PhoneBook.Repositories;
 
 namespace WebAPI.PhoneBook
 {
@@ -32,6 +34,9 @@ namespace WebAPI.PhoneBook
                 opt.UseSqlServer(Configuration.GetConnectionString("Local"));
             }
             );
+
+            services.AddScoped<IUserRepository, UserRepository>();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

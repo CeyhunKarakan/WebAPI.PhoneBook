@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebAPI.PhoneBook.Data;
+using WebAPI.PhoneBook.Interfaces;
 
 namespace WebAPI.PhoneBook.Controllers
 {
@@ -10,16 +12,30 @@ namespace WebAPI.PhoneBook.Controllers
     [Route("api/[controller]")]
     public class UsersController : ControllerBase
     {
-        [HttpGet]
-        public IActionResult GetUsers()
+        private readonly IUserRepository _userRepository;
+
+        public UsersController(IUserRepository userRepository)
         {
-            return Ok(new[] { new{ Name = "Ali", Age = 15 } });
+            _userRepository = userRepository;
+        }
+
+        [HttpGet]
+        public async Task<List<User>> GetAll()
+        {
+            return await _userRepository.GetAllAsync();
 
         }
         [HttpGet("{id}")]
-        public IActionResult GetUser(int id)
+        public async Task<IActionResult> GetById(int id)
         {
-            return Ok(new[] { new { Name = "Aslı", Age = 24 } });
+            var data = await _userRepository.GetByIdAsync(id);
+            if (data == null)
+            {
+                return NotFound(id);
+            }
+            return Ok(data);
         }
+
+
     }
 }
