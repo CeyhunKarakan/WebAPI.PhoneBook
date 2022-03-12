@@ -87,5 +87,11 @@ namespace MVC.PhoneBook.Controllers
                 return View(model);
             }
         }
+        public async Task<IActionResult> Remove(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            await client.DeleteAsync($"http://localhost:5000/api/users/{id}");
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -46,7 +46,7 @@
                 <th>Name</th>
                 <th>Surname</th>
                 <th>Company</th>
-                <th></th>
+                <th>Operations</th>
             </tr>
         </thead>
         <tbody>
@@ -58,6 +58,7 @@
                     <td>@user.Company</td>
                     <td>
                         <a asp-action="Update" asp-controller="Home" asp-route-id="@user.UUID">Update</a>
+                        <a asp-action="Remove" asp-controller="Home" asp-route-id="@user.UUID">Remove</a>
                     </td>
                 </tr>
             }
