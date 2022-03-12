@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using WebAPI.PhoneBook.Interfaces;
 
 namespace WebAPI.PhoneBook.Controllers
 {
+    [EnableCors]
     [ApiController]
     [Route("api/[controller]")]
     public class UsersInformationsController : ControllerBase
