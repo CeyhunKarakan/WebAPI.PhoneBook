@@ -15,6 +15,3 @@ namespace WebAPI.PhoneBook.Data
         public string Company { get; set; }
     }
 }
-
-
-//lisofuserınfo dön
