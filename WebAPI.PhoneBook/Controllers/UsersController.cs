@@ -22,9 +22,10 @@ namespace WebAPI.PhoneBook.Controllers
         }
 
         [HttpGet]
-        public async Task<List<User>> GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            return await _userRepository.GetAllAsync();
+            var data =   await _userRepository.GetAllAsync();
+            return Ok(data);
 
         }
         [HttpGet("{id}")]
@@ -33,7 +34,7 @@ namespace WebAPI.PhoneBook.Controllers
             var data = await _userRepository.GetByIdAsync(id);
             if (data == null)
             {
-                return NotFound(id);
+                return NotFound();
             }
             return Ok(data);
         }
@@ -63,7 +64,7 @@ namespace WebAPI.PhoneBook.Controllers
             var checkUser = await _userRepository.GetByIdAsync(id);
             if (checkUser == null)
             {
-                return NotFound(id);
+                return NotFound();
             }
             await _userRepository.RemoveAsync(id);
             return NoContent();
