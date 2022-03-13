@@ -1,5 +1,5 @@
 # Building PhoneBook App with Using ASP .NET Core Web API And MVC 
-## Tech Stack: .NET Core, .Net Core Web API, .NET Core MVC, Entity Framework Core, Task-based Asynchronous Pattern, MSSQL, HTML, CSS
+## Tech Stack: .NET Core, .Net Core Web API, .NET Core MVC, Entity Framework Core, Task-based Asynchronous Pattern, xUnit Test, MSSQL, HTML, CSS
 
 ## Purpose of the Project:
 Creating a simple phone book application by designing a structure with web services to be used by web or mobile applications. 
