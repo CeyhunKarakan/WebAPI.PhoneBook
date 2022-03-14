@@ -23,7 +23,7 @@ Clone the project on your computer.
   <p>If you don't want to use your DB, don't worry. I added migration. Use this.</p>
   
   <p>Be sure that you installed packages: Microsoft.AspNetCore.Mvc.NewtonsoftJson, Microsoft.EntityFrameworkCore, Microsoft.EntityFrameworkCore.Design,
-  Microsoft.EntityFrameworkCore.SqlServer, Microsoft.EntityFrameworkCore.Tools, Microsoft.EntityFrameworkCore.Design
+  Microsoft.EntityFrameworkCore.SqlServer, Microsoft.EntityFrameworkCore.Tools
 </p>
 <p> ##IMPORTANT: Port Settings </p>
 <p> ##IMPORTANT: Project will be run at localhost://5000. You can change it => launchSettings.json   </p>
